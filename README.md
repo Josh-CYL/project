@@ -9,4 +9,4 @@
 ### 參考資料
 - markdown語法參考 <https://markdown.tw/>
 - 響應式網站概念參考
-- cubic-bezier()參考 [網址](https://www.w3schools.com/cssref/func_cubic-bezier.asp)
+- cubic-bezier()參考 <https://www.w3schools.com/cssref/func_cubic-bezier.asp>
