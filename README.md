@@ -11,7 +11,7 @@
 > [style.css](https://ntshtutorial.github.io/project/style.css)
 ---
 ### 參考資料
-- markdown語法參考 <https://markdown.tw/>
 - 響應式網站概念參考
+- markdown語法參考 <https://markdown.tw/>
 - cubic-bezier()參考 <https://www.w3schools.com/cssref/func_cubic-bezier.asp>
 ---
