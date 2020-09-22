@@ -25,7 +25,7 @@ nav{
 }
 .content > div{
   background: #ffffff;
-  overflow: visible;
+  overflow: auto;
   width:auto;
   border:solid gray;
   border-width:.1em .1em .1em .1em;
