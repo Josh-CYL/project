@@ -18,12 +18,18 @@ nav{
   justify-content: space-around;
   align-items: center;
   background:rgba(0,0,0,.8);
-  /* font-size: 22px; */
-  /* color: #fff; */
-  /* margin-left: 100px; */
 }
 .content{
   padding: 60px;
+  display: grid;
+}
+.content > div{
+  background: #ffffff;
+  overflow: visible;
+  width:auto;
+  border:solid gray;
+  border-width:.1em .1em .1em .1em;
+  padding:.2em .6em;
 }
 @media only screen and (max-width:900px) {
     #menuToggle{
@@ -36,7 +42,7 @@ nav{
 
     #menuToggle a{
       text-decoration: none;
-      color: #232323;/*232323*/
+      color: #232323;
       transition: color 0.3s ease;
     }
 
@@ -122,10 +128,8 @@ nav{
     }
     /* 從左邊滑出*/
     #menuToggle input:checked ~ ul{
+      transition: transform 0.5s cubic-bezier(0.7,0.2,0.05,1.0);
       transform: none;
-    }
-    .content{
-      padding: 60px;
     }
 }
 @media only screen and (min-width: 901px){
