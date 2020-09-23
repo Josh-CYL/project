@@ -150,7 +150,7 @@ nav{
       list-style: none; /* 去除li前圓點 */
     }
     #menu a:hover{
-      color: tomato;
+      color: #ffffff;
       display: inline-block;
       background-color: blue;
       border-radius: 30%;
