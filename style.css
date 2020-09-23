@@ -1,6 +1,6 @@
 /* 引入字型庫 */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
-body{
+body {
   margin: 0;
   padding: 0;
   background: #ffffff;
@@ -8,151 +8,157 @@ body{
   font-family: "Avenir Next", "Avenir", sans-serif;
   box-sizing: border-box;
 }
-nav{
+nav {
   position: fixed;
   display: inline-block;
-  top:0;
+  top: 0;
   left: 0;
-  width:100%;
-  height:60px;
+  width: 100%;
+  height: 60px;
   justify-content: space-around;
   align-items: center;
-  background:rgba(0,0,0,.8);
+  background: rgba(0,0,0,.8);
 }
-.content{
+.content {
   padding: 60px;
   display: grid;
 }
-.content > div{
+.content > div {
   background: #ffffff;
   overflow: auto;
-  width:auto;
-  border:solid gray;
-  border-width:.1em .1em .1em .1em;
-  padding:.2em .6em;
+  width: auto;
+  border: solid gray;
+  border-width: .1em .1em .1em .1em;
+  padding: .2em .6em;
 }
 @media only screen and (max-width:900px) {
-    #menuToggle{
-      display: inline-block;
-      height: 60px;
-      width: 60px;
-      position: fixed;
-      z-index: 1;
-    }
+  #menuToggle {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    z-index: 1;
+  }
 
-    #menuToggle a{
-      text-decoration: none;
-      color: #232323;
-      transition: color 0.3s ease;
-    }
+  #menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+  }
 
-    #menuToggle a:hover{
-      color: tomato;
-    }
+  #menuToggle a:hover {
+    color: tomato;
+  }
 
-    #menuToggle input{
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 60px;
-      width: 60px;
-      opacity: 0; /* 隱藏checkbox的核取方塊，但保留功能 */
-      z-index: 2; /* 將核取方塊放置於漢堡之上，讓下一次點擊能觸發checkbox */
-      cursor: pointer;/* 滑鼠改變成指標，方便辨識 */
-    }
-    /* 設定漢堡的各項參數 */
-    #menuToggle span{
-      display: block;
-      z-index: 1;
-      width: 30px;
-      height: 3.5px;
-      margin-bottom: 5.5px;
-      position: relative;
-      /* 邊界設定 */
-      left: 20px;
-      top: 20px;
-      background: #cdcdcd;
-      transform-origin: 4px 0px;
-      /* 過渡動畫 */
-      transition: transform 0.3s ease-in,
-                  background 0.3s ease-out,
-                  opacity 0.3s ease;
-      /*
+  #menuToggle input {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    opacity: 0;
+    /* 隱藏checkbox的核取方塊，但保留功能 */
+    z-index: 2;
+    /* 將核取方塊放置於漢堡之上，讓下一次點擊能觸發checkbox */
+    cursor: pointer;
+    /* 滑鼠改變成指標，方便辨識 */
+  }
+  /* 設定漢堡的各項參數 */
+  #menuToggle span {
+    display: block;
+    z-index: 1;
+    width: 30px;
+    height: 3.5px;
+    margin-bottom: 5.5px;
+    position: relative;
+    /* 邊界設定 */
+    left: 20px;
+    top: 20px;
+    background: #cdcdcd;
+    transform-origin: 4px 0px;
+    /* 過渡動畫 */
+    transition: transform 0.3s ease-in,
+    background 0.3s ease-out,
+    opacity 0.3s ease;
+    /*
       為了讓動畫看起來能過渡的更加順暢，可以設定
       timing-function中的
       cubic-bezier(x1, y1, x2, y2);
       定義cubic-bezier函數時，每個值須為0到1之間的數字。
       */
-    }
-    /* 設定第一條漢堡的狀態 */
-    #menuToggle span:first-child{
-      transform-origin: 0% 0%;/* 先設定x位置再設定y位置 */
-    }
-    /* 設定倒數第二條漢堡的狀態 */
-    #menuToggle span:nth-last-child(2){
-      transform-origin: 0% 100%;
-    }
-    /*checkbox按下時第一條漢堡順時針旋轉45°*/
-    #menuToggle input:checked ~ span{
-      transform: rotate(45deg);
-      background: #ff3333;
-    }
-    /*隱藏中間那條漢堡*/
-    #menuToggle input:checked ~ span:nth-last-child(3){
-      opacity: 0;
-      transform: rotate(0deg);
-      background: #ededed;
-    }
-     /*checkbox按下時第三條漢堡逆時針旋轉45°*/
-    #menuToggle input:checked ~ span:nth-last-child(2){
-      transform: rotate(-45deg);
-    }
-    /* 設定選單 */
-    #menu{
-      position: fixed;/*選單滑出時能持續顯示於當前畫面上*/
-      width: 30%;
-      height: 100%;
-      margin: -100px 0 0 -50px;
-      padding: 50px;
-      padding-top: 125px;
-      background: #ededed;
-      list-style: none;
-      transform-origin: 0% 0%;
-      transform: translate(-100%, 0);
-      transition: transform 0.3s ease-in;
-    }
-    /* 選單內容設計 */
-    #menu li{
-      padding: 10px 0 0 20px;
-      font-size: 22px;
-    }
-    /* 從左邊滑出*/
-    #menuToggle input:checked ~ ul{
-      transform: none;
-    }
+  }
+  /* 設定第一條漢堡的狀態 */
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+    /* 先設定x位置再設定y位置 */
+  }
+  /* 設定倒數第二條漢堡的狀態 */
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+  /*checkbox按下時第一條漢堡順時針旋轉45°*/
+  #menuToggle input:checked ~ span {
+    transform: rotate(45deg);
+    background: #ff3333;
+  }
+  /*隱藏中間那條漢堡*/
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg);
+    background: #ededed;
+  }
+  /*checkbox按下時第三條漢堡逆時針旋轉45°*/
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg);
+  }
+  /* 設定選單 */
+  #menu {
+    position: fixed;
+    /*選單滑出時能持續顯示於當前畫面上*/
+    width: 30%;
+    height: 100%;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: #ededed;
+    list-style: none;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.3s ease-in;
+  }
+  /* 選單內容設計 */
+  #menu li {
+    padding: 10px 0 0 20px;
+    font-size: 22px;
+  }
+  /* 從左邊滑出*/
+  #menuToggle input:checked ~ ul {
+    transform: none;
+  }
 }
-@media only screen and (min-width: 901px){
-    /* 隱藏派不上用場的checkbox */
-    #menuToggle input{
-      display: none;
-    }
-    /* 選單內容設計 */
-    #menu{
-      display: inline-flex;
-      justify-content: space-around;
-    }
-    #menu a{
-      font-size: 22px;
-      color: #fff;
-      text-decoration: none;
-    }
-    #menu li{
-      list-style: none; /* 去除li前圓點 */
-    }
-    #menu a:hover{
-      color: #ffffff;
-      display: inline-block;
-      background-color: blue;
-      border-radius: 30%;
-    }
+@media only screen and (min-width: 901px) {
+  /* 隱藏派不上用場的checkbox */
+  #menuToggle input {
+    display: none;
+  }
+  /* 選單內容設計 */
+  #menu {
+    display: inline-flex;
+    justify-content: space-around;
+  }
+  #menu a {
+    font-size: 22px;
+    color: #fff;
+    text-decoration: none;
+  }
+  #menu li {
+    list-style: none;
+    /* 去除li前圓點 */
+  }
+  #menu a:hover {
+    color: #ffffff;
+    display: inline-block;
+    background-color: blue;
+    border-radius: 30%;
+  }
 }
