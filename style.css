@@ -74,9 +74,9 @@ nav{
       background: #cdcdcd;
       transform-origin: 4px 0px;
       /* 過渡動畫 */
-      transition: transform 0.5s cubic-bezier(0.7,0.2,0.05,1.0),
-                  background 0.5s cubic-bezier(0.7,0.2,0.05,1.0),
-                  opacity 0.5s ease;
+      transition: transform 0.3s ease-in,
+                  background 0.3s ease-out,
+                  opacity 0.3s ease;
       /*
       為了讓動畫看起來能過渡的更加順暢，可以設定
       timing-function中的
@@ -119,7 +119,7 @@ nav{
       list-style: none;
       transform-origin: 0% 0%;
       transform: translate(-100%, 0);
-      transition: transform 0.5s cubic-bezier(0.7,0.2,0.05,1.0);
+      transition: transform 0.3s ease-in;
     }
     /* 選單內容設計 */
     #menu li{
@@ -128,7 +128,6 @@ nav{
     }
     /* 從左邊滑出*/
     #menuToggle input:checked ~ ul{
-      transition: transform 0.5s cubic-bezier(0.7,0.2,0.05,1.0);
       transform: none;
     }
 }
