@@ -152,6 +152,6 @@ nav{
     }
     #menu a:hover{
       color: tomato;
-      border-bottom: 1px solid red;
+      background-color: tiffany;
     }
 }
