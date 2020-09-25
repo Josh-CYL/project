@@ -7,8 +7,7 @@
 
 ### 內文
 ---
-> Github Page https://github.com/ntshtutorial/project/<br>
-> 網站網址 https://ntshtutorial.github.io/project/<br>
+> 網站網址https://ntshtutorial.github.io/project/<br>
 > [index.html](https://ntshtutorial.github.io/project/index.html)<br>
 > [main.html](https://ntshtutorial.github.io/project/main.html)<br>
 > [style.css](https://ntshtutorial.github.io/project/style.css)
