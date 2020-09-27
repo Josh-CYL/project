@@ -1,0 +1,172 @@
+/* 引入字型庫 */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+body{
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  box-sizing: border-box;
+}
+nav{
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  background:rgba(0,0,0,.8);
+}
+.content{
+  padding: 60px;
+  display: grid;
+}
+.content div{
+  background: #ffffff;
+  overflow: auto;
+  width:auto;
+  border:solid gray;
+  border-width:.1em .1em .1em .1em;
+  padding:.2em .6em;
+}
+@media only screen and (max-width:900px) {
+    /*
+    .close{
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      padding-top: 60px;
+    }
+    */
+    #menuToggle{
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      position: fixed;
+      z-index: 1;
+    }
+
+    #menuToggle a{
+      text-decoration: none;
+      color: #232323;
+      transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover{
+      color: tomato;
+    }
+
+    #menuToggle input{
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      height: 60px;
+      width: 60px;
+      opacity: 0; /* 隱藏checkbox的核取方塊，但保留功能 */
+      z-index: 2; /* 將核取方塊放置於漢堡之上，讓下一次點擊能觸發checkbox */
+      cursor: pointer;/* 滑鼠改變成指標，方便辨識 */
+    }
+    /* 設定漢堡的各項參數 */
+    #menuToggle div{
+      display: block;
+      z-index: 1;
+      width: 30px;
+      height: 3px;
+      margin-bottom: 6.5px;
+      position: relative;
+      /* 邊界設定 */
+      top: 20px;
+      left: 15px;
+      background: #cdcdcd;
+      transform-origin: 3px 0px;
+      /* 過渡動畫 */
+      transition: transform 0.3s ease-in,
+                  background 0.5s ease-out,
+                  opacity 0.5s ease-out;
+    }
+    /* 設定第一條漢堡的狀態 */
+    #menuToggle div:first-child{
+      transform-origin: 0% 0%;/* 先設定x位置再設定y位置 */
+    }
+    /* 設定倒數第二條漢堡的狀態 */
+    #menuToggle div:nth-last-child(2){
+      transform-origin: 0% 100%;
+    }
+    /*checkbox按下時第一條漢堡順時針旋轉45°*/
+    #menuToggle input:checked ~ div{
+      transform: rotate(45deg);
+      background: #ff3333;
+    }
+    /*隱藏中間那條漢堡*/
+    #menuToggle input:checked ~ div:nth-last-child(3){
+      opacity: 0;
+      transform: rotate(0deg);
+      background: #ededed;
+    }
+     /*checkbox按下時第三條漢堡逆時針旋轉45°*/
+    #menuToggle input:checked ~ div:nth-last-child(2){
+      transform: rotate(-45deg);
+    }
+    /* 設定選單 */
+    #menu{
+      position: fixed;/*選單滑出時能持續顯示於當前畫面上*/
+      width: 0%;
+      height: 100%;
+      margin: -100px 0 0 -50px;
+      padding-top: 125px;
+      background: #ededed;
+      list-style: none;
+      transform-origin: 0% 0%;
+      /*transform: translate(-100px,0);*/
+      transition: width 0.5s ease-in;
+    }
+    /* 選單內容設計 */
+    #menu li{
+      padding: 10px 0 0 20px;
+      font-size: 22px;
+      position: relative;
+      /* display: none; */
+      visibility: hidden;
+      white-space:nowrap;
+    }
+    /* 從左邊滑出*/
+    #menuToggle input:checked ~ #menu{
+      /* transform: none; */
+      visibility:	visible;
+      width: 30%;
+      transition: width 0.5s ease-out;
+    }
+    #menuToggle input:checked ~ #menu li{
+      /* display: flex; */
+      visibility: visible;
+      transform: translate(5%, 5%);
+      transition: transform 1s ease-out;
+    }
+}
+@media only screen and (min-width: 901px){
+    /* 隱藏派不上用場的checkbox */
+    #menuToggle input{
+      display: none;
+    }
+    /* 選單內容設計 */
+    #menu{
+      display: flex;
+      justify-content: space-around;
+    }
+    #menu a{
+      font-size: 22px;
+      color: #E0E0E0;
+      text-decoration: none;
+    }
+    #menu li{
+      list-style: none; /* 去除li前圓點 */
+    }
+    #menu a:hover{
+      color: yellow;
+      transition: color 0.8s ease;
+      /* border-bottom: 1px solid red;*/
+    }
+}
