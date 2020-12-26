@@ -8,21 +8,20 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: #056;
+    background-color: #056;
   }
-table{
-    display: inline-block;
-    margin: 0 auto;
-}
 h2{
     text-transform: uppercase;
     text-align: center;
 }
+input : placeholder{
+  color: #fff;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
 @media only screen and (max-width: 900px){
-  .background{
-    width: 100%;
-    position: absolute;
-  }
   .translucent{
     padding: 40px;
     position: absolute;
@@ -34,9 +33,6 @@ h2{
     width: 60%;
     top: 50%;
     left: 50%;
-  }
-  .padding{
-      padding: 5px;
   }
   .translucent input[type="text"],.translucent input[type="password"]{
       border:0;
@@ -78,10 +74,6 @@ h2{
 }
 
 @media only screen and (min-width: 901px){
-  .background{
-    width: 100%;
-    position: absolute;
-  }
   .translucent{
     padding: 40px;
     position: absolute;
@@ -92,9 +84,6 @@ h2{
     width: 50%;
     top: 50%;
     left: 50%;
-  }
-  .padding{
-      padding: 5%;
   }
   .translucent input[type="text"],.translucent input[type="password"]{
       border:0;
@@ -130,7 +119,7 @@ h2{
       transition: 0.25s;
       cursor: pointer;
   }
-  .translucent input[type = "button"]:hover{
+  .translucent input[type="button"]:hover{
       background: #2ecc71;
   }
 }
@@ -142,57 +131,50 @@ function Login(){
     username=username.toLowerCase();
     var password=document.login.password.value;
     password=password.toLowerCase();
-    if ((username=="root" && password=="password")) {
+    if ((username==="root" && password==="password")) {
+            done++;
             window.location="main.html";
-            done=1;
         }
         if (done==0) {
             alert("帳號或密碼錯誤");
+            document.login.password.value = "";
+            document.getElementById('enter');
         }
     }
+    function Enter(){
+      if (event.keyCode==13)  //Enter鍵的鍵值為13
+      document.getElementById("enter").click(); //呼叫登入按鈕
+    }
 </script>
-
 </head>
-<body BGPROPERTIES="FIXED">
-<div class="background"></div>
-<div class="padding"></div>
+<body BGPROPERTIES="FIXED" onkeydown="Enter();">
 <div class="translucent">
 <form name="login">
-    <center>
     <table border="0px" cellpadding="5">
-    <tbody>
-    <tr>
-    <td colspan="2">
-    <font size="7" face="malgun gothic">
-    <center><H2>Login</H2></center>
-    </font>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <span style="font-family: Times New Roman; font-size: x-large;">
-    <input name="username" type="text" placeholder="帳號"/>
-    </span>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <span style="font-family: Times New Roman; font-size: x-large;">
+      <tbody>
+      <tr><td colspan="2">
+      <font size="7" face="malgun gothic">
+        <center><H2>Login</H2></center>
+      </font>
+      </td></tr>
+      <tr><td>
+      <span style="font-family: Times New Roman; font-size: x-large;">
+        <input name="username" type="text" placeholder="帳號"/>
+      </span>
+      </td></tr>
+      <tr><td>
+      <span style="font-family: Times New Roman; font-size: x-large;">
         <input name="password" type="password" placeholder="密碼"/>
-    </span>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <span style="font-family: Times New Roman; font-size: x-large;">
+      </span>
+      </td></tr>
+      <tr><td>
+      <span style="font-family: Times New Roman; font-size: x-large;">
         <span style="white-space: normal;">
-        <input onclick="Login()" type="button" value=" 登入 "/>
+          <input onclick="Login()" type="button" id="enter" value=" 登入 "/>
         </span>
-    </span>
-    </td>
-    </tr>
+      </span>
+      </td></tr>
     </table>
-    </center>
 </form>
 </div>
 </body>
