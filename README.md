@@ -8,9 +8,9 @@
 ### 內文
 ---
 > 網站網址https://Josh-CYL.github.io/project/<br>
-> [index.html](https://ntshtutorial.github.io/project/index.html)<br>
-> [main.html](https://ntshtutorial.github.io/project/main.html)<br>
-> [style.css](https://ntshtutorial.github.io/project/style.css)
+> 登入介面 [index.html](https://ntshtutorial.github.io/project/index.html)<br>
+> 內容介面 [main.html](https://ntshtutorial.github.io/project/main.html)<br>
+> 版面設計 [style.css](https://ntshtutorial.github.io/project/style.css)
 
 ### 參考資料
 ---
