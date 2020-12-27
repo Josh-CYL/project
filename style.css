@@ -1,7 +1,7 @@
 /* 引入字型庫 */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
 body{
-  margin: 0;
+  margin: 60px 0px 0px 0px;/*上右下左*/
   padding: 0;
   background: #ffffff;
   color: #cdcdcd;
@@ -9,7 +9,7 @@ body{
   box-sizing: border-box;
 }
 nav{
-  position: sticky;
+  position: fixed;
   display: inline-block;
   top: 0;
   left: 0;
