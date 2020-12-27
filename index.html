@@ -142,9 +142,20 @@ function Login(){
         }
     }
     function Enter(){
-      if (event.keyCode==13)  //Enter鍵的鍵值為13
-      document.getElementById("enter").click(); //呼叫登入按鈕
+      if (event.keyCode==13){  //Enter鍵的鍵值為13
+        document.getElementById("enter").click(); //呼叫登入按鈕
+      }
     }
+    // function Up(){
+    //   if (event.keyCode==13){  //Enter鍵的鍵值為13
+    //     document.getElementById("account").click(); //呼叫登入按鈕
+    //   }
+    // }
+    // function Down(){
+    //   if (event.keyCode==13){  //Enter鍵的鍵值為13
+    //     document.getElementById("passcode").click(); //呼叫登入按鈕
+    //   }
+    // }
 </script>
 </head>
 <body BGPROPERTIES="FIXED" onkeydown="Enter();">
@@ -159,12 +170,12 @@ function Login(){
       </td></tr>
       <tr><td>
       <span style="font-family: Times New Roman; font-size: x-large;">
-        <input name="username" type="text" placeholder="帳號"/>
+        <input id="account" name="username" type="text" placeholder="帳號"/>
       </span>
       </td></tr>
       <tr><td>
       <span style="font-family: Times New Roman; font-size: x-large;">
-        <input name="password" type="password" placeholder="密碼"/>
+        <input id="passcode" name="password" type="password" placeholder="密碼"/>
       </span>
       </td></tr>
       <tr><td>
