@@ -57,17 +57,17 @@ nav{
       position: fixed;
       z-index: 1;
     }
-
+ 
     #menuToggle a{
       text-decoration: none;
       color: #232323;
       transition: color 0.3s ease;
     }
-
+ 
     #menuToggle a:hover{
       color: tomato;
     }
-
+ 
     #menuToggle input{
       position: fixed;
       top: 0;
@@ -131,7 +131,7 @@ nav{
       list-style: none;
       transform-origin: 0% 0%;
       transform: translate(-100px,0);
-      transition: width 0.5s ease-in;
+      transition: 0.5s ease-out;
     }
     /* 選單內容設計 */
     #menu li{
